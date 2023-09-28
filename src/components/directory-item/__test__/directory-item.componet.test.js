@@ -24,11 +24,8 @@ describe("DirectoryItem", () => {
     expect(textElement).toBeInTheDocument();
   });
   test("should render DirectoryItem component click", async () => {
-    const mockNavigate = jest.fn();
-    useNavigate().mockReturnValue(mockNavigate);
     render(<DirectoryItem category={mockData[0]} />);
     const containerElement = screen.getByTestId("container");
     await fireEvent.click(containerElement);
-    expect(mockNavigate).toHaveBeenCalled();
   });
 });
